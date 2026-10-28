@@ -1,5 +1,57 @@
 from wonderwords import RandomWord
 
+
+stages = [r'''
+  +---+
+  |   |
+  O   |
+ /|\  |
+ / \  |
+      |
+=========''', r'''
+  +---+
+  |   |
+  O   |
+ /|\  |
+ /    |
+      |
+=========''', r'''
+  +---+
+  |   |
+  O   |
+ /|\  |
+      |
+      |
+=========''', r'''
+  +---+
+  |   |
+  O   |
+ /|   |
+      |
+      |
+=========''', r'''
+  +---+
+  |   |
+  O   |
+  |   |
+      |
+      |
+=========''', r'''
+  +---+
+  |   |
+  O   |
+      |
+      |
+      |
+=========''', r'''
+  +---+
+  |   |
+      |
+      |
+      |
+      |
+=========''']
+
 def hangman():
     w = RandomWord()
     answer = w.word()
@@ -20,6 +72,7 @@ def hangman():
                 spot = indices.pop(0)
                 spaces[spot] = answer[spot]
         print("".join(spaces).upper())
+        print(stages[chances])
     
     if chances > 0:
         print(f"\n\n\nYou Win!")
